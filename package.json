@@ -5,6 +5,7 @@
     "deploy": "antd-tools run clean && npm run site && bisheng gh-pages --push-only"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
     "antd": "^2.12.2",
     "bezier-easing": "^2.0.3",
     "color-standalone": "^0.11.6",
@@ -15,7 +16,8 @@
     "react-copy-to-clipboard": "^5.0.0",
     "react-document-title": "^2.0.3",
     "react-github-button": "^0.1.11",
-    "react-intl": "^2.3.0"
+    "react-intl": "^2.3.0",
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
