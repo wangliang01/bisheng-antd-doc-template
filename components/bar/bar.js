@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { v4 as uuid4} from 'uuid'
 import PropTypes from 'prop-types'
+import { isEqual } from 'lodash'
 
 class Bar extends Component {
   static propTypes = {
@@ -35,6 +36,19 @@ class Bar extends Component {
     this.context = this.canvas.getContext('2d')
     this.drawBarChart(this.props.options)
   }
+  componentDidUpdate (prevProps) {
+    console.log("componentDidUpdate", prevProps);
+    if (isEqual(prevProps.options, this.props.options)) return
+    this.clearCanvas()
+    this.drawBarChart(this.props.options)
+
+  }
+  /**
+   * 清除画布内容
+   */
+  clearCanvas = () => {
+    this.context.clearRect(0,0,this.canvas.width,this.canvas.height);
+   }
   /**
    * 绘制柱状图
    */

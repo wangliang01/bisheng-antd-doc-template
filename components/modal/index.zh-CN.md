@@ -2,6 +2,7 @@
 category: 组件
 title: Modal对话框
 subtitle:
+order: 0
 ---
 
 模态对话框
@@ -14,12 +15,17 @@ subtitle:
 ## API
 
 
-| 参数     | 说明                                 | 类型        | 默认值 |
-| -------- | ------------------------------------ | ----------- | ------ |
-| visible  | 对话框是否可见                       | boolean     | -      |
-| title    | 标题                                 | string      | -      |
-| onOk     | 点击确定回调型                       | function(e) | -      |
-| onCancel | 点击遮罩层或右上角叉或取消按钮的回调 | function(e) | -      |
+| 参数       | 说明                                 | 类型        | 默认值 |
+| ---------- | ------------------------------------ | ----------- | ------ |
+| visible    | 对话框是否可见                       | boolean     | -      |
+| title      | 标题                                 | string      | -      |
+| onOk       | 点击确定回调型                       | function(e) | -      |
+| onCancel   | 点击遮罩层或右上角叉或取消按钮的回调 | function(e) | -      |
+| width      | 模态框宽度                           | number      | 600    |
+| okText     | 确认按钮文字                         | string      | '确认' |
+| cancelText | 取消按钮文字                         | string      | '取消' |
+| footer     | 自定义footer                         | any         | null   |
+| content    | 主体内容                             | any         | -      |
 
 
 <style>

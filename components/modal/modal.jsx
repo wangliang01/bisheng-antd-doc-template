@@ -8,30 +8,42 @@ export default class Modal extends Component {
     title: PropTypes.string,
     onOk: PropTypes.func,
     onCancel: PropTypes.func,
-    children: PropTypes.any
+    content: PropTypes.any,
+    footer: PropTypes.any,
+    width: PropTypes.number,
+    okText: PropTypes.string,
+    cancelText: PropTypes.string
   }
   static defaultProps = {
     visible: false,
     title: '标题',
     onOk: () => {},
-    onCancel: () => {}
+    onCancel: () => { },
+    footer: null,
+    width: 600,
+    okText: '确认',
+    cancelText: '取消'
   }
   render () {
     const {
-       visible,
-       title,
-       children,
-       onOk,
-       onCancel
+      visible,
+      title,
+      content,
+      onOk,
+      onCancel,
+      footer,
+      width,
+      okText,
+      cancelText,
+      children
     } = this.props,
     show = { zIndex: 2000, opacity: 1 },
     hide = { zIndex: -1, opacity: 0 },
-    contShow = { width: 600, minHeight: 300, maxHeight: 600 },
-    contHide = { width: 0, height: 0 }
+    style = { width: width, minHeight: 300, maxHeight: 600 }
     return (
       <div className="modalContainer" style={ visible ? show : hide }>
         <div className="mask" onClick={onCancel}></div>
-        <div className="innerContent" style={ visible ? contShow : contHide }>
+        <div className="innerContent" style={ style }>
           <div className="innerContent-header">
             <div className="innerContent-title">
               <span className="title">{title}</span>
@@ -39,12 +51,12 @@ export default class Modal extends Component {
             </div>
           </div>
           <div className="innerContent-center">
-            {children}
+            {content ? content : children}
           </div>
-          <div className="innerContent-footer">
-            <Button type='cancel' onClick={onCancel} className="btn btn-cancel">取消</Button>
-            <Button type='primary' onClick={onOk} className="btn btn-ok">确定</Button>
-          </div>
+          {footer ? footer : <div className="innerContent-footer">
+            <Button type='cancel' onClick={onCancel} className="btn btn-cancel">{cancelText}</Button>
+            <Button type='primary' onClick={onOk} className="btn btn-ok">{okText}</Button>
+          </div>}
         </div>
       </div>
     )
