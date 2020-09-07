@@ -19,7 +19,7 @@ module.exports = {
     'app.demo.riddle': '在 Riddle 中打开',
 
 
-    "app.home.title": "北风吹寒的主页",
+    "app.home.title": "野火燎原的主页",
     'app.footer.links': '友情链接',
     'app.footer.community': '社区',
   },

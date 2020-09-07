@@ -19,7 +19,7 @@ module.exports = {
     'app.demo.riddle': 'Open in Riddle',
 
 
-    "app.home.title": "北风吹寒的主页",
+    "app.home.title": "野火燎原的主页",
     'app.footer.links': 'Friends',
     'app.footer.community': 'Community',
   },
